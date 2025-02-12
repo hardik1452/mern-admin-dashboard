@@ -99,6 +99,54 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
+            <List>
+              {navItems.map(({ id, text, icon }) => {
+                if (!icon) {
+                  return (
+                    <Typography key={id} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                      {text}
+                    </Typography>
+                  );
+                }
+                const lctext = text.toLowerCase();
+                return (
+                  <ListItem key={id} disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        navigate(`${lctext}`);
+                        setActive(lctext);
+                      }}
+                      sx={{
+                        backgroundColor:
+                          active === lctext
+                            ? theme.palette.secondary[300]
+                            : "transparent",
+                        color:
+                          active === lctext
+                            ? theme.palette.primary[600]
+                            : theme.palette.secondary[100],
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          ml: "2rem",
+                          color:
+                            active === lctext
+                              ? theme.palette.primary[600]
+                              : theme.palette.secondary[200],
+                        }}
+                      >
+                        {icon}
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                      {active === lctext && (
+                        <ChevronRightOutlined sx={{ ml: "auto" }} />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                );
+              })}
+            </List>
           </Box>
         </Drawer>
       )}
