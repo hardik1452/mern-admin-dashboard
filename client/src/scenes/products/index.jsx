@@ -14,7 +14,7 @@ const Products = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   console.log("data", data);
   return (
-    <Box>
+    <Box m="1.5rem 2.0rem">
       <Header title="PRODUCTS" subTitle="See all the list of  products." />
       {data || !isLoading ? (
         <Box
