@@ -15,7 +15,16 @@ import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
-import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/index.js";
+import OverAllStat from "./models/OverAllStat.js";
+import AffiliateStat from "./models/AffiliateStat.js";
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+  dataOverallStat,
+  dataAffiliateStat,
+} from "./data/index.js";
 
 //Configuration
 dotenv.config(); //loads the environment variable
@@ -41,9 +50,11 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server listening on PORT: ${PORT}`));
     // ADD ONE TIME ONLY
+    // AffiliateStat.insertMany(dataAffiliateStat);
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // User.insertMany(dataUser);
     // Transaction.insertMany(dataTransaction);
+    // OverAllStat.insertMany(dataOverallStat);
   })
   .catch((error) => console.log(error));

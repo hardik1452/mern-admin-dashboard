@@ -1,3 +1,7 @@
-import express from 'express';
-const router  = express.Router();
+import express from "express";
+import { getSales } from "../controlllers/sales.js";
+const router = express.Router();
+
+router.get("/sales", getSales);
+
 export default router;
