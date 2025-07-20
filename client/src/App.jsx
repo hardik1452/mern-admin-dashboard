@@ -12,8 +12,8 @@ import Geography from "./scenes/geography/index.jsx";
 import Overview from "./scenes/overview/index.jsx";
 import { themeSettings } from "./theme";
 import Daily from "./scenes/daily/index.jsx";
-import Monthly from "./scenes/monthly/index.jsx";
 import Breakdown from './scenes/breakdown/index.jsx';
+import Monthly from "./scenes/monthly/index.jsx";
 import Admin from './scenes/admin/index.jsx';
 import Performance from './scenes/performance/index.jsx'
 function App() {
